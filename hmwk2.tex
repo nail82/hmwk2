@@ -7,9 +7,102 @@
 \maketitle
 
 \section*{1. Comparison of Grids and Clusters}
+Cluster and grid based computing paradigms have a number of
+similarities and several important differences. Both are a means of
+utilizing surplus resources from a collection of computing
+hardware. Below, I will attempt to identify some distinguishing
+characteristics of the two approaches.
+
+% admin domains
+Clusters consist of a group of networked computers, brought together
+on a permanent or semi-permanent basis to solve computationally
+expensive problems.  Normally, they are restricted to a single
+administrative domain.
+
+Grids are also networked computer resources, but they vary from
+clusters in that the resources span administrative boundaries. This
+spanning of boundaries is called a Virtual Organization and is a
+defining characteristic of grid computing~\cite{classtext}
+and~\cite{anatomy}.
+
+% architectures
+% - cluster: master/slave, hadoop as example
+%   homogeneous
+% - grid: usually no centralized control, since crossing boundaries
+%   doesn't have to be computation. can be other resources like
+%   storage
+%   heterogeneous
+A second distinction between clusters and grids is the architecture of
+the network and the software environment present on the nodes of the
+system. Grid members can be heterogeneous in hardware and software,
+while clustered systems are homogeneous in nature with each node
+executing the same or similar local operating system~\cite{classtext}.
+
+Clusters are often constructed in a master/worker layout. An example
+of this cluster organization is the popular Hadoop cluster framework
+used widely in industry~\cite{hadoop}.
+
+Grids vary in their network layout and are not normally subject to
+centralized control.  Also, the resources made available by a grid may
+not be computational in nature. Some grids are organized primarily for
+data sharing~\cite{anatomy}.
+
+% applications
+% - cluster Long running batch applications, mostly within 1 org
+% - grid Collaborative problem solving across organizations
+%   multi-organizational scientific research
+Finally, clusters and grids vary based on the computation performed.
+Clusters are often used to perform long running calculations on
+unreliable resources~\cite{hadoop},~\cite{condor-man}. This execution
+model requires the scheduling mechanism to be aware of failures in
+order to restart failed portions of a computation.
+
+Grid systems, on the other hand, are targeted to resource
+sharing. There can be a high performance computation component to a
+grid architecture, but this is not necessarily the focus of a
+grid~\cite{anatomy}.
+
+
+
 
 \section*{2. HTCondor}
-\subsection*{}
+\subsection*{Part a}
+HTCondor uses the idle resources of machines in the worker pool and
+was designed to be sensitive to the owners of worker pool
+machines~\cite{condor-man}.  There is nothing preventing an
+administrator from setting up a worker pool of dedicated machines to a
+Condor cluster, however.
+
+\subsection*{Part b}
+High Performance Computing (HPC) is a computation strategy using a
+tightly coupled machine or network to attack difficult computations
+with short time horizons. Applications requiring HPC computations
+would normally be run at a super computer installation.  An example
+application is weather modeling software~\cite{hpcwire}.
+
+High Throughput Computing (HTC) is used to reliably execute long
+running computations on more mainstream, commodity hardware.  These
+long running programs must be executed on systems that monitor the
+intermediate calculations and provide rollback and restart in the face
+of hardware failures.  Example applications include Monte Carlo
+simulation runs and studies that explore the parameter space of a
+problem~\cite{hpcwire}.
+
+\subsection*{Part c}
+The ClassAd mechanism in HTCondor is used to match hardware resources
+with submitted jobs.  Workers in the Condor pool publish attributes of
+their runtime environment (e.g. CPU, memory, current workload). Job
+submitters present preferences for the type of hardware they would
+like to bring to bear on their problem.  The Condor scheduler monitors
+both streams of information and pairs up submitted jobs with available
+execution resources~\cite{condor-man}.
+
+\section*{3. Multiple Choice}
+3a iii
+3b i
+3c i
+3d ii
+3e ii
 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,hmwk2}
