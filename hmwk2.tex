@@ -17,13 +17,13 @@ characteristics of the two approaches.
 Clusters consist of a group of networked computers, brought together
 on a permanent or semi-permanent basis to solve computationally
 expensive problems.  Normally, they are restricted to a single
-administrative domain.
+administrative domain. An administrative domain refers to the individual
+or organization that controls access to a computing resource.
 
 Grids are also networked computer resources, but they vary from
 clusters in that the resources span administrative boundaries. This
 spanning of boundaries is called a Virtual Organization and is a
-defining characteristic of grid computing~\cite{classtext}
-and~\cite{anatomy}.
+defining characteristic of grid computing~\cite{classtext},~\cite{anatomy}.
 
 % architectures
 % - cluster: master/slave, hadoop as example
@@ -35,17 +35,16 @@ and~\cite{anatomy}.
 A second distinction between clusters and grids is the architecture of
 the network and the software environment present on the nodes of the
 system. Grid members can be heterogeneous in hardware and software,
-while clustered systems are homogeneous in nature with each node
-executing the same or similar local operating system~\cite{classtext}.
+while clustered systems are homogeneous with each node presenting
+the same or similar execution environment to applications~\cite{classtext}.
 
 Clusters are often constructed in a master/worker layout. An example
 of this cluster organization is the popular Hadoop cluster framework
-used widely in industry~\cite{hadoop}.
-
-Grids vary in their network layout and are not normally subject to
-centralized control.  Also, the resources made available by a grid may
-not be computational in nature. Some grids are organized primarily for
-data sharing~\cite{anatomy}.
+used widely in industry~\cite{hadoop}. Grids vary in their network
+layout and are not normally subject to centralized control.  Also, the
+resources made available by a grid may not be computational in
+nature. Some grids are organized primarily for data
+sharing~\cite{anatomy}.
 
 % applications
 % - cluster Long running batch applications, mostly within 1 org
@@ -55,30 +54,28 @@ Finally, clusters and grids vary based on the computation performed.
 Clusters are often used to perform long running calculations on
 unreliable resources~\cite{hadoop},~\cite{condor-man}. This execution
 model requires the scheduling mechanism to be aware of failures in
-order to restart failed portions of a computation.
-
-Grid systems, on the other hand, are targeted to resource
-sharing. There can be a high performance computation component to a
-grid architecture, but this is not necessarily the focus of a
-grid~\cite{anatomy}.
-
+order to restart failed portions of a computation. Grid systems, on
+the other hand, are targeted to resource sharing. There can be a high
+performance computation component to a grid architecture, but this is
+not necessarily the focus of a grid~\cite{anatomy}.
 
 
 
 \section*{2. HTCondor}
 \subsection*{Part a}
-HTCondor uses the idle resources of machines in the worker pool and
-was designed to be sensitive to the owners of worker pool
-machines~\cite{condor-man}.  There is nothing preventing an
-administrator from setting up a worker pool of dedicated machines to a
-Condor cluster, however.
+HTCondor uses the idle resources of machines in the worker pool and is
+designed to be sensitive to the activies of worker pool machine
+owners~\cite{condor-man}.  Nothing prevents and administrator from
+setting up a pool of dedicated machines as the workers in Condor
+cluster.
+
 
 \subsection*{Part b}
 High Performance Computing (HPC) is a computation strategy using a
 tightly coupled machine or network to attack difficult computations
 with short time horizons. Applications requiring HPC computations
-would normally be run at a super computer installation.  An example
-application is weather modeling software~\cite{hpcwire}.
+would normally be run on a super-computer or similar installation.  An
+example application is weather modeling and forecasting~\cite{hpcwire}.
 
 High Throughput Computing (HTC) is used to reliably execute long
 running computations on more mainstream, commodity hardware.  These
@@ -98,11 +95,15 @@ both streams of information and pairs up submitted jobs with available
 execution resources~\cite{condor-man}.
 
 \section*{3. Multiple Choice}
-3a iii
-3b i
-3c i
-3d ii
-3e ii
+
+  \begin{itemize}
+  \item[3a] iii
+  \item[3b] i
+  \item[3c] iii
+  \item[3d] ii
+  \item[3e] ii
+\end{itemize}
+
 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,hmwk2}
